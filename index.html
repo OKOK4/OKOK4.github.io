@@ -1,41 +1,121 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>あなたのＨＰタイトル</title>
-<meta name="keywords" content="ページのキーワードA,B,C">
-<meta name="description" content="ページの説明">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | 名前を入力</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fontsの読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="outer">
-<header><div id="header-container"><div id="head-inner"><h1>あなたのＨＰタイトル</h1>
-<p class="description">あなたのＨＰの説明文</p></div></div>
-</header>
-<div id="content-wrapper">
-<main>
-<div id="inner">
-<h2>記事ページ見出し・大</h2>
-<p>文章あれこれ</p>
-<h3>記事ページ見出し・中</h3>
-<p>文章あれこれ</p>
-<h4>記事ページ見出し・小</h4>
-<p>文章あれこれ</p>
-</div>
-</main>
-<aside>
-<div id="middle-inner">
-<div class="side-title">menu</div>
-<div class="side">
-<ul>
-<li>記事ページへのリンク</li>
-<li>記事ページへのリンク</li>
-</ul>
-</div>
-</div>
-</aside>
-</div>
-<footer>© 2010 あなたのホームページ</footer>
-</div></body>
+
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">My Portfolio</h1>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <header class="hero">
+        <div class="hero-content">
+            <h2>Hello, I'm [Your Name]</h2>
+            <p>Web Designer / Developer</p>
+            <a href="#projects" class="btn">作品を見る</a>
+        </div>
+    </header>
+
+    <!-- 自己紹介 -->
+    <section id="about" class="section">
+        <div class="container">
+            <h3 class="section-title">About Me</h3>
+            <div class="about-flex">
+                <div class="about-text">
+                    <p>ここにあなたの自己紹介文を記入してください。大切にしている価値観や、これまでの経歴などを短くまとめると良いです。</p>
+                    <p>趣味や得意な分野についても触れると、人柄が伝わりやすくなります。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- プロジェクト（作品集） -->
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h3 class="section-title">Projects</h3>
+            <div class="project-grid">
+                <!-- プロジェクト1 -->
+                <div class="project-card">
+                    <div class="project-img">Image 1</div>
+                    <div class="project-info">
+                        <h4>プロジェクト名 A</h4>
+                        <p>使用技術: HTML, CSS, JavaScript</p>
+                        <a href="#" class="more-link">詳細を見る</a>
+                    </div>
+                </div>
+                <!-- プロジェクト2 -->
+                <div class="project-card">
+                    <div class="project-img">Image 2</div>
+                    <div class="project-info">
+                        <h4>プロジェクト名 B</h4>
+                        <p>使用技術: WordPress, PHP</p>
+                        <a href="#" class="more-link">詳細を見る</a>
+                    </div>
+                </div>
+                <!-- プロジェクト3 -->
+                <div class="project-card">
+                    <div class="project-img">Image 3</div>
+                    <div class="project-info">
+                        <h4>プロジェクト名 C</h4>
+                        <p>使用技術: UI/UX Design</p>
+                        <a href="#" class="more-link">詳細を見る</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- スキル -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h3 class="section-title">Skills</h3>
+            <div class="skills-list">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Adobe XD</span>
+                <span>Figma</span>
+                <span>WordPress</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h3 class="section-title">Contact</h3>
+            <p style="text-align: center; margin-bottom: 2rem;">お気軽にお問い合わせください。</p>
+            <div class="contact-info">
+                <p>Email: <span>your-email@example.com</span></p>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </footer>
+
+</body>
 </html>
