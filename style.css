@@ -134,6 +134,15 @@ a {
 }
 
 /* プロジェクト */
+/* Projects セクションの新しいスタイル */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    
+    /* ↓ ここで作品ごとの縦の隙間を調整 */
+    gap: 60px; 
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -147,50 +156,151 @@ a {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* 画像を入れる枠の設定 */
 .project-img {
-    height: 200px;
-    background: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #888;
+    width: 100%;           /* 横幅いっぱい */
+    aspect-ratio: 16 / 9;  /* ★重要：枠をフルHDと同じ16:9の形に固定する */
+    overflow: hidden;
+    background: #f0f0f0;   /* 画像がない時の背景色 */
+}
+
+.project-img img {
+    width: 100%;           /* 枠の横幅に合わせる */
+    height: 100%;          /* 枠の高さに合わせる */
+    
+    /* 見切れを防ぐための選択肢（どちらか選んでください） */
+    
+    object-fit: cover;     
+    /* ↑【選択肢A】比率が同じならこれで見切れません。
+       もし画像が16:9より少しでも横長だと、端が少し切れます。 */
+
+    /* object-fit: contain; */ 
+    /* ↑【選択肢B】絶対に見切れてほしくない場合はこちら。
+       画像全体が枠内に収まります（隙間ができる場合があります）。 */
 }
 
 .project-info {
-    padding: 20px;
+    flex: 1;                /* 説明文の幅 */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.project-info h4 {
+.project-category {
+    font-size: 0.85rem;
+    color: #3498db;
+    font-weight: bold;
+    text-transform: uppercase;
     margin-bottom: 10px;
 }
 
-.project-info p {
-    font-size: 0.9rem;
-    color: #666;
+.project-info h4 {
+    font-size: 1.6rem;
     margin-bottom: 15px;
 }
 
-.more-link {
-    color: #3498db;
-    font-size: 0.9rem;
-    font-weight: bold;
+.project-info p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.7;
 }
 
-/* スキル */
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+.project-tech {
+    margin-bottom: 25px;
 }
 
-.skills-list span {
-    background: #eee;
-    padding: 10px 20px;
+.project-tech span {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 8px;
+    color: #555;
+}
+
+.btn-detail {
+    align-self: flex-start; /* ボタンを左寄せに */
+    padding: 10px 25px;
+    background: #333;
+    color: #fff;
     border-radius: 5px;
+    font-weight: bold;
     font-size: 0.9rem;
 }
 
+.btn-detail:hover {
+    background: #3498db;
+}
+
+/* スマホ対応（画面が狭い時は縦に積み上げる） */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column; /* 画像と説明を縦に並べる */
+    }
+    
+    .project-img {
+        min-height: 250px;
+    }
+
+    .project-info {
+        padding: 25px;
+    }
+}
+/* スキル */
+/* --- Skillsセクションの調整 --- */
+
+.skills-container {
+    max-width: 600px;    /* バー全体の最大幅（長すぎると見にくいため） */
+    margin: 0 auto;      /* これで中央寄せになります */
+    padding: 20px;
+}
+
+.skill-item {
+    margin-bottom: 25px; /* バーとバーの間の余白 */
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* バーの背景（グレーの部分） */
+.skill-bar-bg {
+    width: 100%;
+    height: 12px;        /* バーの太さ */
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* バーの中身（色のついた部分） */
+.skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2ecc71); /* 青から緑へのグラデーション */
+    border-radius: 10px;
+    /* ふわっと伸びるアニメーション */
+    animation: fillBar 2s ease-out forwards;
+}
+
+/* バーが左から右へ伸びるアニメーション設定（お好みで） */
+@keyframes fillBar {
+    from { width: 0; }
+}
+
+/* スマホ用設定：画面が小さい時は横幅いっぱいに使う */
+@media (max-width: 600px) {
+    .skills-container {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
 /* お問い合わせ */
 .contact-info {
     text-align: center;
@@ -205,13 +315,19 @@ a {
     margin-top: 20px;
 }
 
-.social-links a {
-    margin: 0 10px;
-    color: #666;
+.contact-simple {
+    text-align: center; /* 真ん中に寄せる */
+    font-size: 1.1rem;
+    line-height: 2;     /* 行間を広げて見やすくする */
 }
 
-.social-links a:hover {
-    color: #3498db;
+.contact-simple a {
+    color: #3498db;     /* リンクの色 */
+    text-decoration: underline; /* リンクと分かりやすくするために下線を引く */
+}
+
+.contact-simple a:hover {
+    text-decoration: none; /* マウスを乗せた時に下線を消す */
 }
 
 /* フッター */

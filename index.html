@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <!-- Google Fontsの読み込み -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- ナビゲーション -->
@@ -26,8 +28,8 @@
     <!-- ヒーローセクション -->
     <header class="hero">
         <div class="hero-content">
-            <h2>Hello, I'm [Your Name]</h2>
-            <p>Web Designer / Developer</p>
+            <h2>尾上 慧 / おのうえ けい</h2>
+            <p>ゲームプログラマー志望</p>
             <a href="#projects" class="btn">作品を見る</a>
         </div>
     </header>
@@ -38,8 +40,10 @@
             <h3 class="section-title">About Me</h3>
             <div class="about-flex">
                 <div class="about-text">
-                    <p>ここにあなたの自己紹介文を記入してください。大切にしている価値観や、これまでの経歴などを短くまとめると良いです。</p>
-                    <p>趣味や得意な分野についても触れると、人柄が伝わりやすくなります。</p>
+                    <p>バンタンゲームアカデミー福岡校にてゲームプログラミングを学んでいます。
+                    <p>主にUnityを使用してゲームを開発することが多いです。C++を使った開発経験もあります。
+                    </p>
+                    <p>趣味は、ゲームプレイやゲーム実況動画の視聴です。</p>
                 </div>
             </div>
         </div>
@@ -47,51 +51,129 @@
 
     <!-- プロジェクト（作品集） -->
     <section id="projects" class="section bg-light">
-        <div class="container">
-            <h3 class="section-title">Projects</h3>
-            <div class="project-grid">
-                <!-- プロジェクト1 -->
-                <div class="project-card">
-                    <div class="project-img">Image 1</div>
-                    <div class="project-info">
-                        <h4>プロジェクト名 A</h4>
-                        <p>使用技術: HTML, CSS, JavaScript</p>
-                        <a href="#" class="more-link">詳細を見る</a>
-                    </div>
+    <div class="container">
+        <h3 class="section-title">Projects</h3>
+        
+        <div class="project-list">
+            <!-- プロジェクト1 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/スクリーンショット 2026-01-20 210856.png" alt="作品1">
                 </div>
-                <!-- プロジェクト2 -->
-                <div class="project-card">
-                    <div class="project-img">Image 2</div>
-                    <div class="project-info">
-                        <h4>プロジェクト名 B</h4>
-                        <p>使用技術: WordPress, PHP</p>
-                        <a href="#" class="more-link">詳細を見る</a>
+                <div class="project-info">
+                    <span class="project-category">個人開発</span>
+                    <h4>Fall in Nightmare</h4>
+                    <p>ジャンル：2D横スクロールホラー<br>
+                        開発期間：2ヶ月<br><br>
+                        悪夢の中で化け物に追いかけられながら、夢からの脱出を目指す。ゲームの中のプレイヤーや背景の家具等、UI周りをすべて自作して制作したことで、世界観を崩さずに作りたいゲームを制作できた。
+                    </p>
+                    <div class="project-tech">
+                        <span>Unity</span><span>C#</span><span>GraphicsGale</span>
                     </div>
+                    <a href="https://github.com/OKOK4/2Dhorror" target="_blank" rel="noopener noreferrer" class="btn-detail">GitHubへ</a>
                 </div>
-                <!-- プロジェクト3 -->
-                <div class="project-card">
-                    <div class="project-img">Image 3</div>
-                    <div class="project-info">
-                        <h4>プロジェクト名 C</h4>
-                        <p>使用技術: UI/UX Design</p>
-                        <a href="#" class="more-link">詳細を見る</a>
+            </div>
+
+            <!-- プロジェクト2 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/スクリーンショット 2026-01-20 205912.png" alt="作品2">
+                </div>
+                <div class="project-info">
+                    <span class="project-category">チーム開発</span>
+                    <h4>Curse of the Brave</h4>
+                    <p>ジャンル：2DローグライクRPG<br>
+                        開発期間：3ヶ月<br><br>
+                        モンスターと戦い、フィールド上の教会へたどり着き、生き延びる。<br>主にUI周りのプログラムなどを担当。
+                    </p>
+                    <div class="project-tech">
+                        <span>Unity</span><span>C#</span>
                     </div>
+                    <a href="https://github.com/HinataPiyo/KoumeiOnowayHinata" target="_blank" rel="noopener noreferrer" class="btn-detail">GitHubへ</a>
+                </div>
+            </div>
+
+            <!-- プロジェクト3 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/スクリーンショット 2026-01-20 212658.png" alt="作品3">
+                </div>
+                <div class="project-info">
+                    <span class="project-category">個人開発</span>
+                    <h4>廃館</h4>
+                    <p>ジャンル：3Dホラー<br>
+                        開発期間：2ヶ月<br><br>
+                        館に棲む化け物から逃げながら、その化け物を払うためのアイテムを集めて館の除霊を目指す。AIを使ったゲーム制作に取り組み、コーディング補助や3Dモデル作成などで高いクオリティのゲームを作成できた。
+                    </p>
+                    <div class="project-tech">
+                        <span>Unity</span><span>C#</span><span>GoogleImageFX</span><span>Tripo</span>
+                    </div>
+                    <a href="https://github.com/OKOK4/3DHorror" target="_blank" rel="noopener noreferrer" class="btn-detail">GitHubへ</a>
                 </div>
             </div>
         </div>
-    </section>
+
+    </div>
+</section>
 
     <!-- スキル -->
     <section id="skills" class="section">
         <div class="container">
             <h3 class="section-title">Skills</h3>
-            <div class="skills-list">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-                <span>Adobe XD</span>
-                <span>Figma</span>
-                <span>WordPress</span>
+
+            <!-- スキルバー全体を囲むコンテナ -->
+            <div class="skills-container">
+
+                <!-- スキル1 -->
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Unity</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <!-- スキル2 -->
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>C#</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <!-- スキル3 -->
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>C++</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 40%;"></div>
+                    </div>
+                </div>
+
+                <!-- スキル4 -->
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+
+                <!-- スキル5 -->
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>PowerPoint</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -101,12 +183,10 @@
         <div class="container">
             <h3 class="section-title">Contact</h3>
             <p style="text-align: center; margin-bottom: 2rem;">お気軽にお問い合わせください。</p>
-            <div class="contact-info">
-                <p>Email: <span>your-email@example.com</span></p>
+            <div class="contact-simple">
+                <p>Email: <a href="mailto:commanderk2005@icloud.com">commanderk2005@icloud.com</a></p>
+                <p>GitHub: <a href="https://github.com/OKOK4" target="_blank" rel="noopener noreferrer">https://github.com/OKOK4</a></p>
                 <div class="social-links">
-                    <a href="#">Twitter</a>
-                    <a href="#">GitHub</a>
-                    <a href="#">Instagram</a>
                 </div>
             </div>
         </div>
@@ -114,8 +194,9 @@
 
     <!-- フッター -->
     <footer>
-        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+        <p>&copy; 2026 尾上慧. All Rights Reserved.</p>
     </footer>
 
 </body>
+
 </html>
